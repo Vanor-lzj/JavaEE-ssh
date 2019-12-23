@@ -29,14 +29,14 @@ public class UserService implements IUserService {
      */
     public boolean register(AccountEntity user) {
         System.out.println("execute --register()-- method.");
-
+        ActionContext ctx = ActionContext.getContext();
+        session = (Map) ctx.getSession();
+        request = (Map) ctx.get("request");
         try {
             accountDao.save(user);
+            request.put("tip", "账号"+user.getUserId()+"注册成功，请登录！");
             return true;
         } catch (Exception e) {
-            ActionContext ctx = ActionContext.getContext();
-            session = (Map) ctx.getSession();
-            request = (Map) ctx.get("request");
             request.put("tip", "注册失败！");
             System.out.println("register error!!!");
             return false;

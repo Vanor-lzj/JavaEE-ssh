@@ -19,6 +19,10 @@ public class UserAction {
         this.userService = userService;
     }
 
+    public IUserService getUserService() {
+        return userService;
+    }
+
     /**
      * 注册
      * @return result

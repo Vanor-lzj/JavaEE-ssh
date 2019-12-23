@@ -167,11 +167,9 @@
                             </div>
                         </div>
             --%>
-            <footer style="text-align: center"><p>Copyright &copy; 2019.ZJUT All rights reserved.</footer>
         </div>
-        <!-- /. PAGE INNER -->
+        <footer style="text-align: center"><p>Copyright &copy; 2019.ZJUT All rights reserved.</footer>
     </div>
-    <!-- /. PAGE WRAPPER -->
 </div>
 <!-- /. WRAPPER -->
 <!-- JS Scripts-->

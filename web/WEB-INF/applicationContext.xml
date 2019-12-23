@@ -36,13 +36,20 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
     <bean id="accountDAO" class="cn.edu.zjut.dao.AccountDAO" parent="baseDAO"/>
+    <bean id="buildingDao" class="cn.edu.zjut.dao.BuildingDAO" parent="baseDAO"/>
+    <!--Service Beans-->
+    <bean id="userService" class="cn.edu.zjut.service.UserService">
+        <property name="accountDao" ref="accountDAO"/>
+    </bean>
+    <bean id="buildingService" class="cn.edu.zjut.service.BuildingService">
+        <property name="buildingDAO" ref="buildingDao"/>
+    </bean>
     <!--Action Beans-->
     <bean id="userAction" class="cn.edu.zjut.action.UserAction" scope="prototype">
         <property name="userService" ref="userService"/>
     </bean>
-    <!--Service Beans-->
-    <bean id="userService" class="cn.edu.zjut.service.UserService">
-        <property name="accountDao" ref="accountDAO"/>
+    <bean id="buildingAction" class="cn.edu.zjut.action.BuildingAction" scope="prototype">
+        <property name="buildingService" ref="buildingService"/>
     </bean>
 
 </beans>

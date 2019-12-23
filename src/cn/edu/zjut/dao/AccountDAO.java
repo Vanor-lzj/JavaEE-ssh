@@ -33,7 +33,7 @@ public class AccountDAO extends BaseHibernateDAO implements IAccountDAO {
      * @return 查询结果
      */
     public List findByAccount(AccountEntity account) {
-        log.debug("finding Customer instance by Account");
+        log.debug("finding AccountEntity instance by Account");
         try {
             String hql = "from AccountEntity where userId='" + account.getUserId() + "' and userPassword='" + account.getUserPassword() + "'";
             Query queryObject = getSession().createQuery(hql);

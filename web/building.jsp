@@ -54,12 +54,32 @@
                 </div>
             </div>
             <!-- /. ROW -->
-            这里是主内容区域
-            <footer style="text-align: center"><p>Copyright &copy; 2019.ZJUT All rights reserved.</footer>
+            <div class="row clearfix" style="font-size: 16px">
+                <div style="float: left">
+                    <s:form action="searchBuilding" method="post" class="form-inline">
+                        <div class="form-group">
+                            查询：<select name="select" style="margin-right: 16px" class="form-control">
+                            <option value="all">所有</option>
+                            <option value="deft">楼号</option>
+                        </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="info">
+                        </div>
+                        <div class="form-group" style="margin-left: 16px">
+                            <input class="btn btn-default" type="submit" value="查询">
+                        </div>
+                    </s:form>
+                </div>
+                <div style="float: right;margin-right: 80px">
+                    <a href="peopleAdd.jsp" class="btn btn-default" style="font-size: 16px" id="add">
+                        <span class="glyphicon glyphicon-plus" style="margin-right: 5px"></span>添加员工
+                    </a>
+                </div>
+            </div>
         </div>
-        <!-- /. PAGE INNER -->
+        <footer style="text-align: center"><p>Copyright &copy; 2019.ZJUT All rights reserved.</footer>
     </div>
-    <!-- /. PAGE WRAPPER -->
 </div>
 <!-- /. WRAPPER -->
 <!-- JS Scripts-->
