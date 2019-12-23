@@ -13,7 +13,6 @@
         </action>
         <action name="searchBuilding" class="buildingAction" method="search">
             <result name="success">/building.jsp</result>
-            <result name="fail">/building.jsp</result>
         </action>
     </package>
 </struts>

@@ -4,9 +4,29 @@ package cn.edu.zjut.action;
 import cn.edu.zjut.po.BuildingEntity;
 import cn.edu.zjut.service.IBuildingService;
 
+import java.util.List;
+
 public class BuildingAction {
+    private String selectMethod;
     private BuildingEntity building;
     private IBuildingService buildingService = null;
+    private List<BuildingEntity> list;
+
+    public List<BuildingEntity> getList() {
+        return list;
+    }
+
+    public void setList(List<BuildingEntity> list) {
+        this.list = list;
+    }
+
+    public String getSelectMethod() {
+        return selectMethod;
+    }
+
+    public void setSelectMethod(String selectMethod) {
+        this.selectMethod = selectMethod;
+    }
 
     public BuildingEntity getBuilding() {
         return building;
@@ -25,13 +45,11 @@ public class BuildingAction {
     }
 
     /**
-     * 注册
+     * 搜索
      * @return result
      */
     public String search() {
-        if(buildingService.search(building)){
-            return "success";
-        }
-        return "fail";
+        list=buildingService.search(selectMethod,building);
+        return "success";
     }
 }

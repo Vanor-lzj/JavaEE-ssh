@@ -58,9 +58,9 @@
                 <div style="float: left">
                     <s:form action="searchBuilding" method="post" class="form-inline">
                         <div class="form-group">
-                            查询：<select name="select" style="margin-right: 16px" class="form-control">
+                            查询：<select name="selectMethod" style="margin-right: 16px" class="form-control">
                             <option value="all">所有</option>
-                            <option value="deft">楼号</option>
+                            <option value="id">楼号</option>
                         </select>
                         </div>
                         <div class="form-group">
