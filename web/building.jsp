@@ -64,7 +64,7 @@
                         </select>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="info">
+                            <input type="text" class="form-control" name="building.buildingId">
                         </div>
                         <div class="form-group" style="margin-left: 16px">
                             <input class="btn btn-default" type="submit" value="查询">
@@ -77,6 +77,29 @@
                     </a>
                 </div>
             </div>
+            <span style="color: red"><s:property value="#request.tip"/></span>
+            <s:if test="list.size()>0">
+                <table class="table table-striped result">
+                    <tr>
+                        <td>楼号</td>
+                        <td>楼名</td>
+                        <td>操作</td>
+                    </tr>
+                    <s:iterator value="list" status="statu" var="buildings">
+                        <tr>
+                            <td>
+                                <s:property value="#buildings.buildingId"/>
+                            </td>
+                            <td>
+                                <s:property value="#buildings.buildingName"/>
+                            </td>
+                            <td>
+                                暂定
+                            </td>
+                        </tr>
+                    </s:iterator>
+                </table>
+            </s:if>
         </div>
         <footer style="text-align: center"><p>Copyright &copy; 2019.ZJUT All rights reserved.</footer>
     </div>

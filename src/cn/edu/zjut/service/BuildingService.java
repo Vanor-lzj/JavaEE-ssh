@@ -41,6 +41,12 @@ public class BuildingService implements IBuildingService {
         else if(selectMethod.equals("id")){
             list=(List<BuildingEntity>)buildingDAO.findByBuilding(building);
         }
+        ActionContext ctx = ActionContext.getContext();
+        session = (Map) ctx.getSession();
+        request = (Map) ctx.get("request");
+        if (list.isEmpty()) {
+         request.put("tip","无对应记录，请检查输入！");
+        }
         return list;
     }
 }
