@@ -10,7 +10,7 @@ import org.hibernate.Transaction;
 import java.util.List;
 
 public class BuildingDAO extends BaseHibernateDAO implements IBuildingDAO {
-    private Log log = LogFactory.getLog(AccountDAO.class);
+    private Log log = LogFactory.getLog(BuildingDAO.class);
 
     /**
      * insert building表
