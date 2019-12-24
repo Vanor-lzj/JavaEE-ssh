@@ -56,13 +56,23 @@ public class BuildingService implements IBuildingService {
      */
     public void delete(BuildingEntity building){
         ActionContext ctx = ActionContext.getContext();
-        session = (Map) ctx.getSession();
         request = (Map) ctx.get("request");
         System.out.println("execute --delete()-- method.");
         if(buildingDAO.delete(building)){
             request.put("tip","删除楼宇成功！");
         }else {
             request.put("tip","删除楼宇失败！！");
+        }
+    }
+
+    public void add(BuildingEntity building){
+        ActionContext ctx = ActionContext.getContext();
+        request = (Map) ctx.get("request");
+        System.out.println("execute --save()-- method.");
+        if(buildingDAO.save(building)){
+            request.put("tip","添加宇成功！");
+        }else {
+            request.put("tip","添加楼宇失败！！");
         }
     }
 }

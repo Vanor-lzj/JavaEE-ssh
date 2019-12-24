@@ -55,7 +55,7 @@
             </div>
             <!-- /. ROW -->
             <div class="row clearfix" style="font-size: 16px">
-                <div style="float: left">
+                <div style="float: left;margin-bottom: 25px;">
                     <s:form action="searchBuilding" method="post" class="form-inline">
                         <div class="form-group">
                             查询：<select name="selectMethod" style="margin-right: 16px" class="form-control">
@@ -72,18 +72,24 @@
                     </s:form>
                 </div>
                 <div style="float: right;margin-right: 80px">
-                    <a href="peopleAdd.jsp" class="btn btn-default" style="font-size: 16px" id="add">
-                        <span class="glyphicon glyphicon-plus" style="margin-right: 5px"></span>添加员工
+                    <s:form action="addBuilding" method="POST"></s:form>
+                    <a href="addBuilding" class="btn btn-default" style="font-size: 16px" id="add">
+                        <span class="glyphicon glyphicon-plus" style="margin-right: 5px"></span>楼宇管理员设置
                     </a>
                 </div>
             </div>
             <span style="color: red"><s:property value="#request.tip"/></span>
-            <s:if test="list.size()>0">
-                <table class="table table-striped result">
+            <s:form action="addBuilding" method="POST">
+                <table class="table table-striped result" style="border: solid #dddddd 2px;">
                     <tr>
                         <td>楼号</td>
                         <td>楼名</td>
                         <td>操作</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="form-control" name="building.buildingId" style="width: 50%"></td>
+                        <td><input type="text" class="form-control" name="building.buildingName" style="width: 50%"></td>
+                        <td><input class="btn btn-default" type="submit" value="添加"></td>
                     </tr>
                     <s:iterator value="list" status="statu" var="buildings">
                         <tr>
@@ -100,7 +106,7 @@
                         </tr>
                     </s:iterator>
                 </table>
-            </s:if>
+            </s:form>
         </div>
         <footer style="text-align: center"><p>Copyright &copy; 2019.ZJUT All rights reserved.</footer>
     </div>

@@ -17,12 +17,15 @@ public class BuildingDAO extends BaseHibernateDAO implements IBuildingDAO {
      *
      * @param transientInstance 要insert的building
      */
-    public void save(BuildingEntity transientInstance) {
+    public boolean save(BuildingEntity transientInstance) {
         Transaction tran = null;
         try (Session session = getSession()) {
             tran = session.beginTransaction();
             session.save(transientInstance);
             tran.commit();
+            return true;
+        }catch (Exception e){
+            return false;
         }
     }
 

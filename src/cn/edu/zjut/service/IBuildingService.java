@@ -9,4 +9,5 @@ public interface IBuildingService {
 
     void delete(BuildingEntity building);
 
+    public void add(BuildingEntity building);
 }

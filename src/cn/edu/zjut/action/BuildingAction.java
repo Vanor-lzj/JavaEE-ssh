@@ -30,6 +30,15 @@ public class BuildingAction {
         return  "success";
     }
 
+    /**
+     * 添加
+     * @return result
+     */
+    public String add(){
+        buildingService.add(building);
+        return "success";
+    }
+
     public List<BuildingEntity> getList() {
         return list;
     }
