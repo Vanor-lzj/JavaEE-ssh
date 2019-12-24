@@ -49,4 +49,20 @@ public class BuildingService implements IBuildingService {
         }
         return list;
     }
+
+    /***
+     * 删除楼宇
+     * @param building 要删除的building
+     */
+    public void delete(BuildingEntity building){
+        ActionContext ctx = ActionContext.getContext();
+        session = (Map) ctx.getSession();
+        request = (Map) ctx.get("request");
+        System.out.println("execute --delete()-- method.");
+        if(buildingDAO.delete(building)){
+            request.put("tip","删除楼宇成功！");
+        }else {
+            request.put("tip","删除楼宇失败！！");
+        }
+    }
 }

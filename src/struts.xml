@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?> <!DOCTYPE struts PUBLIC
-        "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
-        "http://struts.apache.org/dtds/struts-2.1.dtd">
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
     <package name="strutsBean" extends="struts-default" namespace="/">
         <action name="login" class="userAction" method="login">
@@ -11,8 +11,9 @@
             <result name="success">/login.jsp</result>
             <result name="fail">/register.jsp</result>
         </action>
-        <action name="searchBuilding" class="buildingAction" method="search">
+        <action name="*Building" class="buildingAction" method="{1}">
             <result name="success">/building.jsp</result>
+            <allowed-methods>search,delete</allowed-methods>
         </action>
     </package>
 </struts>

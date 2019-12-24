@@ -7,6 +7,30 @@ public class UserAction {
     private AccountEntity loginUser;
     private IUserService userService = null;
 
+    /**
+     * 注册
+     *
+     * @return result
+     */
+    public String register() {
+        if (userService.register(loginUser)) {
+            return "success";
+        }
+        return "fail";
+    }
+
+    /**
+     * 登录
+     *
+     * @return result
+     */
+    public String login() {
+        if (userService.login(loginUser)) {
+            return "success";
+        }
+        return "fail";
+    }
+
     public AccountEntity getLoginUser() {
         return loginUser;
     }
@@ -23,25 +47,5 @@ public class UserAction {
         return userService;
     }
 
-    /**
-     * 注册
-     * @return result
-     */
-    public String register() {
-        if(userService.register(loginUser)){
-            return "success";
-        }
-        return "fail";
-    }
-    /**
-     * 登录
-     * @return result
-     */
-    public String login() {
-        if(userService.login(loginUser)){
-            return "success";
-        }
-        return "fail";
-    }
 
 }

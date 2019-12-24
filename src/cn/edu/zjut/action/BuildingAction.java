@@ -12,6 +12,24 @@ public class BuildingAction {
     private IBuildingService buildingService = null;
     private List<BuildingEntity> list;
 
+    /**
+     * 搜索
+     * @return result
+     */
+    public String search() {
+        list=buildingService.search(selectMethod,building);
+        return "success";
+    }
+
+    /**
+     * 删除
+     * @return result
+     */
+    public String delete(){
+        buildingService.delete(building);
+        return  "success";
+    }
+
     public List<BuildingEntity> getList() {
         return list;
     }
@@ -44,12 +62,5 @@ public class BuildingAction {
         this.buildingService = buildingService;
     }
 
-    /**
-     * 搜索
-     * @return result
-     */
-    public String search() {
-        list=buildingService.search(selectMethod,building);
-        return "success";
-    }
+
 }

@@ -11,6 +11,7 @@ import java.util.List;
 
 public class BuildingDAO extends BaseHibernateDAO implements IBuildingDAO {
     private Log log = LogFactory.getLog(AccountDAO.class);
+
     /**
      * insert building表
      *
@@ -58,5 +59,24 @@ public class BuildingDAO extends BaseHibernateDAO implements IBuildingDAO {
             log.error("find by BuildingEntity failed", re);
             throw re;
         }
+    }
+
+    /***
+     * 删除building
+     * @param building 要删除的对象
+     * @return delete方法执行结果
+     */
+    public boolean delete(BuildingEntity building) {
+        log.debug("deleting BuildingEntity instance by BuildingEntity");
+        Transaction tran = null;
+        try (Session session = getSession()) {
+            tran = session.beginTransaction();
+            session.delete(building);
+            tran.commit();
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+
     }
 }

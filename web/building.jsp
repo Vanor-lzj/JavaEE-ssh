@@ -94,7 +94,8 @@
                                 <s:property value="#buildings.buildingName"/>
                             </td>
                             <td>
-                                暂定
+                                <a href="deleteBuilding?building.buildingId=<s:property value='#buildings.buildingId'/>"
+                                   class="btn btn-default">删除</a>
                             </td>
                         </tr>
                     </s:iterator>

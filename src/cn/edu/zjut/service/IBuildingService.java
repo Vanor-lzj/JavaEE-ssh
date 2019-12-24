@@ -6,4 +6,7 @@ import java.util.List;
 
 public interface IBuildingService {
     List<BuildingEntity> search(String selectMethod, BuildingEntity building);
+
+    void delete(BuildingEntity building);
+
 }
