@@ -17,7 +17,7 @@ public class BuildingAction {
      * @return result
      */
     public String search() {
-        list=buildingService.search(selectMethod,building);
+        buildingService.search(selectMethod,building);
         return "success";
     }
 

@@ -91,7 +91,7 @@
                         <td><input type="text" class="form-control" name="building.buildingName" style="width: 50%"></td>
                         <td><input class="btn btn-default" type="submit" value="添加"></td>
                     </tr>
-                    <s:iterator value="list" status="statu" var="buildings">
+                    <s:iterator value="#session.buildingList" status="statu" var="buildings">
                         <tr>
                             <td>
                                 <s:property value="#buildings.buildingId"/>
