@@ -1,6 +1,5 @@
 package cn.edu.zjut.po;
 
-import java.util.Collection;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -11,6 +10,16 @@ public class DormEntity {
     private Integer dormPeopleNum;
     private Integer dormPeopleMax;
     private Set<AccountEntity> users = new HashSet<>();
+    private BuildingEntity buildingByDormId;
+
+    public BuildingEntity getBuildingByDormId() {
+        return buildingByDormId;
+    }
+
+    public void setBuildingByDormId(BuildingEntity buildingByDormId) {
+        this.buildingByDormId = buildingByDormId;
+    }
+
 
     public String getDormId() {
         return dormId;
@@ -51,6 +60,7 @@ public class DormEntity {
     public void setUsers(Set<AccountEntity> users) {
         this.users = users;
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

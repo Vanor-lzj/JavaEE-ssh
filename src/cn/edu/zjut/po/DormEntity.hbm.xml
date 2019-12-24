@@ -16,5 +16,9 @@
             <!--一对多关系，一个寝室多个学生-->
             <one-to-many not-found="ignore" class="cn.edu.zjut.po.AccountEntity"/>
         </set>
+        <!--多对一关系，多个寝室对应一栋楼-->
+        <many-to-one name="buildingByDormId" class="cn.edu.zjut.po.BuildingEntity">
+            <column name="building_id"/>
+        </many-to-one>
     </class>
 </hibernate-mapping>

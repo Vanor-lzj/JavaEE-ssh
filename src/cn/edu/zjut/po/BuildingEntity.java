@@ -1,5 +1,6 @@
 package cn.edu.zjut.po;
 
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -7,6 +8,15 @@ public class BuildingEntity {
     private String buildingId;
     private String buildingName;
     private Set<AccountEntity> accounts;
+    private Set<DormEntity> dorms = new HashSet<>();
+
+    public Set<DormEntity> getDorms() {
+        return dorms;
+    }
+
+    public void setDorms(Set<DormEntity> dorms) {
+        this.dorms = dorms;
+    }
 
     public String getBuildingId() {
         return buildingId;

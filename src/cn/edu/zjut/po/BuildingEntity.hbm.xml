@@ -14,5 +14,12 @@
             <!--多对多关系，一栋楼有多个管理员，一个管理员有多栋楼-->
             <many-to-many class="cn.edu.zjut.po.AccountEntity"/>
         </set>
+        <set name="dorms" inverse="true">
+            <key>
+                <column name="building_id"/>
+            </key>
+            <!--一对多关系，一个楼宇多个寝室-->
+            <one-to-many not-found="ignore" class="cn.edu.zjut.po.DormEntity"/>
+        </set>
     </class>
 </hibernate-mapping>
